@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: health_dekho_app
+  profiles:
+    active: ${SPRING_ACTIVE_PROFILES:dev}
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: 86400000
