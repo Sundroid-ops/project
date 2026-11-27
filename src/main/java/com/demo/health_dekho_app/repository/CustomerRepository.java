@@ -7,12 +7,13 @@ import com.demo.health_dekho_app.entity.enums.CustomerStatus;
 
 import java.util.Optional;
 
-public interface CustomerRepository
-        extends JpaRepository<CustomerEntity, Long> {
+public interface CustomerRepository extends JpaRepository<CustomerEntity, Long> {
 
     Optional<CustomerEntity> findByEmailIgnoreCase(String email);
 
     Optional<CustomerEntity> findByIdAndStatus(Long id, CustomerStatus status);
 
     boolean existsByEmailIgnoreCase(String email);
+
+    Optional<CustomerEntity> findById(Long customerId);
 }

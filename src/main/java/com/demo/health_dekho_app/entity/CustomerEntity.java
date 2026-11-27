@@ -11,16 +11,8 @@ import com.demo.health_dekho_app.entity.enums.CustomerStatus;
 public class CustomerEntity {
 
     @Id
-    @GeneratedValue(
-        strategy = GenerationType.SEQUENCE,
-        generator = "customer_seq"
-    )
-    @SequenceGenerator(
-        name = "customer_seq",
-        sequenceName = "customer_id_seq",
-        allocationSize = 1
-    )
-    private Long customer_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long customerId;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -58,7 +50,7 @@ public class CustomerEntity {
         updatedAt = OffsetDateTime.now();
     }
 
-    public Long getId() { return customer_id; }
+    public Long getId() { return customerId; }
     public String getEmail() { return email; }
     public String getPasswordHash() { return passwordHash; }
     public String getFullName() { return fullName; }
@@ -66,7 +58,7 @@ public class CustomerEntity {
     public String getPhone() { return phone; }
     public CustomerStatus getStatus() { return status; }
 
-    public void setCustomerId(Long customer_id){ this.customer_id = customer_id; }
+    public void setCustomerId(Long customer_id){ this.customerId = customer_id; }
     public void setEmail(String email) { this.email = email; }
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
