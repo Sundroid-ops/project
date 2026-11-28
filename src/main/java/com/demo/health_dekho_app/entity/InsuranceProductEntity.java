@@ -3,7 +3,6 @@ package com.demo.health_dekho_app.entity;
 import java.math.BigDecimal;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 

@@ -106,7 +106,7 @@ public class RecommendationService {
         AIRecommendedProductsResponse aiResponse = chatClient.prompt()
                 .system(recommendationPrompt.getSystemPrompt())
                 .user(recommendationPrompt.getUserPrompt(
-                        request, age, initialProducts))
+                        request, age))
                 .tools(availableProductsTool)
                 .call()
                 .entity(AIRecommendedProductsResponse.class);
